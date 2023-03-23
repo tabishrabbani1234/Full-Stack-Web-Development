@@ -1,0 +1,10 @@
+h2 {
+   text-align : center;
+}
+#container{
+    margin-right: auto;
+    margin-left: auto;
+    width: 900px;
+    height: 575px;
+    border-style: solid;
+}
