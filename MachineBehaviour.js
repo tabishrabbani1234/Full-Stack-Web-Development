@@ -122,7 +122,6 @@ function requestHandlerFunction(){
       xhr.send();
       xhr.onload = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
-          const data = xhr.response;
           const timeStamp = xhr.getResponseHeader("eventTime");
           const state = xhr.getResponseHeader("machineState");
           const x_pos = xhr.getResponseHeader("rowIndex");
