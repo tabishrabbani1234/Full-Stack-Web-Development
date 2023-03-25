@@ -2,6 +2,8 @@
 var eventType = "Initialized";
 var machineState;
 var eventTimeStamp;
+
+//Created machine class. It can be used to scale the code to multiple machines with few changes.
 class Machine {
    var timeStamp;
    var row_Index;
@@ -19,6 +21,8 @@ class Machine {
    }
 }
 Machine machine;
+
+//Created event handler function to update eventType on key press from user
 function createEventHandlerContainer(event){
      if (event.defaultPrevented) {
        return ;
@@ -46,7 +50,7 @@ function createEventHandlerContainer(event){
      addGridElementStyle();
      requestHandlerFunction();
 }
-
+//Update machine state based on backend response
 function responseHandlerFunction(var timeStamp, var state, var x_pos, var y_pos){
      if(timeStamp !== machine.machineStateTimeStamp){
          removeGridElementStyle();
@@ -57,12 +61,14 @@ function responseHandlerFunction(var timeStamp, var state, var x_pos, var y_pos)
      }
 }
 
+//When backend returns the next time, it should be called. Setting up timeout to call backend again
 function setMachineRequestcall(var time){
    var currentTime = new Date();
    var timeInMilliSeconds = time - currentTime.getMilliseconds();
    window.setTimeout(requestHandlerFunction, timeInMilliSeconds);
 }
 
+//Add css property to current machine position
 function addGridElementStyle() {
     var count = (machine.row_Index * 60) + machine.col_Index ;
     var cell = ("div").concat(count.toString());
@@ -78,6 +84,7 @@ function addGridElementStyle() {
     }
 }
 
+//When machine current position changes, update the last grid css property
 function removeGridElementStyle() {
     var count = (machine.row_Index * 60) + machine.col_Index ;
     var cell = ("div").concat(count.toString());
@@ -86,6 +93,7 @@ function removeGridElementStyle() {
     div.style.border-style = "none";
 }
 
+//Dynamically create grid of 20*60 and initialize the machine.
 function createGrid(){
    for(var i = 0; i < 20; i++) {
       var row = document.createElement("div");
@@ -113,6 +121,7 @@ function createGrid(){
      requestHandlerFunction()
 }
 
+//Send request with event type and event timestamp
 function requestHandlerFunction(){
       const xhr = new XMLHttpRequest();
       var url = ("https://localhost:8080/container/").concat(toString((machine.rowIndex - 1)*60 + machine.colIndex);
