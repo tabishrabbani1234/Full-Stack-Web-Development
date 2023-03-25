@@ -67,6 +67,7 @@ function addGridElementStyle() {
     var count = (machine.row_Index * 60) + machine.col_Index ;
     var cell = ("div").concat(count.toString());
     var div = document.getElementById(cell);
+    div.focus();
     div.style.background = "green";
     if(machineState == "Focusing"){
        div.style.border-style = "dashed";
