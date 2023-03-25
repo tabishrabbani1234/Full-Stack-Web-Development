@@ -1,5 +1,5 @@
 <script>
-var eventType;
+var eventType = "Initialized";
 var machineState;
 var eventTimeStamp;
 class Machine {
@@ -115,9 +115,11 @@ function createGrid(){
 
 function requestHandlerFunction(){
       const xhr = new XMLHttpRequest();
-      xhr.open("GET", "https://localhost:8080");
+      var url = ("https://localhost:8080/container/").concat(toString((machine.rowIndex - 1)*60 + machine.colIndex);
+      xhr.open("POST", url, true);
       xhr.setRequestHeader('state',machine.state);
-      xhr.setRequestHeader('state', machine.timeStamp);
+      xhr.setRequestHeader('timeStamp', machine.timeStamp);
+      xhr.setRequestHeader('eventType', eventType);
       xhr.send();
       xhr.onload = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
