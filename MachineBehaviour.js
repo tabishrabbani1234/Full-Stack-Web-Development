@@ -117,7 +117,6 @@ function requestHandlerFunction(){
       const xhr = new XMLHttpRequest();
       var url = ("https://localhost:8080/container/").concat(toString((machine.rowIndex - 1)*60 + machine.colIndex);
       xhr.open("POST", url, true);
-      xhr.setRequestHeader('state',machine.state);
       xhr.setRequestHeader('timeStamp', machine.timeStamp);
       xhr.setRequestHeader('eventType', eventType);
       xhr.send();
