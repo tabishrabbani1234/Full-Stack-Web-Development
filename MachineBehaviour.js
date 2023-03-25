@@ -114,7 +114,7 @@ function createGrid(){
 
 function requestHandlerFunction(){
       const xhr = new XMLHttpRequest();
-      xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+      xhr.open("GET", "https://localhost:8080");
       xhr.setRequestHeader('state',machine.state);
       xhr.setRequestHeader('state', machine.timeStamp);
       xhr.send();
