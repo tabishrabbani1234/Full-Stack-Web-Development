@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.morphleLabs.machine.domain.Machine as Machine;
+import com.morphleLabs.machine.domain.Machine;
 
 @Controller
 public class MachineController {
