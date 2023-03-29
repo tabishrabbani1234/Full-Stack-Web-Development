@@ -103,7 +103,7 @@ function requestHandlerFunction(){
       xhr.setRequestHeader('eventType', eventType);
       xhr.send();
       xhr.onload = () => {
-        if (xhr.readyState == 4 && xhr.status == 200) {
+        if (xhr.status == 200) {
           const timeStamp = xhr.getResponseHeader("eventTime");
           const state = xhr.getResponseHeader("machineState");
           const x_pos = xhr.getResponseHeader("rowIndex");
