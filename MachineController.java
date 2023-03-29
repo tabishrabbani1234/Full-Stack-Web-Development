@@ -12,7 +12,7 @@ public class MachineController {
     Machine machine;
     public static boolean initialized = false;
     @RequestMapping("/")
-    public String helloMessage(HttpServletRequest request, HttpServletResponse response) {
+    public HttpServletResponse helloMessage(HttpServletRequest request, HttpServletResponse response) {
         long timeStamp = request.getHeader("timeStamp");
         String event = request.getHeader("event");
         if(!initialized){
