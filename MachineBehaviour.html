@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <h2>Morphle Labs Machine</h2>
     <title>Title</title>
-    <link rel="stylesheet" href="MachineBehaviour.css">
-    <script src="MachineBehaviour.js"></script>
 </head>
 <body>
+    <link rel="stylesheet" href="MachineBehaviour.css">
+    <script type="text/javascript" src="MachineBehaviour.js"></script>
     <p id="Machine Header">Click the following button to create Machine grid</p>
     <input id="button" type="button" onclick="createGrid()" value="Create Grid">
     <div id="container">
     </div>
+    </br>
+    <input id="upArrow" type="button" value="&#8593" onclick="getTimeStamp(event),upArrowClick()">
+    </br>
+    <input id="leftArrow" type="button" value="&#8592" onclick="getTimeStamp(event),leftArrowClick()">
+    <input id="rightArrow" type="button" value="&#8594" onclick="getTimeStamp(event),rightArrowClick()">
+    </br>
+    <input id="downArrow" type="button" value="&#8595" onclick="getTimeStamp(event),downArrowClick()">
 </body>
 </html>
