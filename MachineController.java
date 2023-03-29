@@ -21,7 +21,7 @@ public class MachineController {
             machine = new Machine();
             initialized = true;
         }
-        machine.updateEventList(event,timeStamp);
+        response = machine.updateEventList(event,timeStamp);
         response.setStatus(200);
         return "Body";
     }
